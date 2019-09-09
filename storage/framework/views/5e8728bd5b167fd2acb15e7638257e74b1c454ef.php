@@ -10,7 +10,8 @@
 <table class="tabela">
 <tb><td>
 <form action="/agenda" method="POST">
-{{csrf_field()}}
+<?php echo e(csrf_field()); ?>
+
 <p><strong>CRIAR REGISTRO</strong></p>
 <p>Nome:&emsp;<input type="text" name="nome"></p>
 <p>Telefone:<input type="text" name="telefone"></p><br>

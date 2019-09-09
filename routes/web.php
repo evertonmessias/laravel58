@@ -11,15 +11,14 @@
 |
 */
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {return view('index');});
 Route::get('estilo', 'AgendaController@estilo');
 Route::get('funcoes', 'AgendaController@funcoes');
 Route::get('lista', 'AgendaController@lista');
 Route::get('criar', 'AgendaController@criar');
-Route::get('show/{agenda}/edit', 'AgendaController@edit');
 Route::post('agenda','AgendaController@store');
 Route::get('show/{agenda}', 'AgendaController@show');
+Route::get('show/{agenda}/edit', 'AgendaController@edit');
+Route::get('show/{agenda}/del', 'AgendaController@del');
 Route::put('update/{agenda}', 'AgendaController@update');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::delete('destroy/{agenda}', 'AgendaController@destroy');

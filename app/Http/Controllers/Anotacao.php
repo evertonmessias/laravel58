@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Anotacao;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class Anotacao extends Controller
 {
@@ -41,10 +42,10 @@ class Anotacao extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Anotacao  $anotacao
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Anotacao $anotacao)
     {
         //
     }
@@ -52,10 +53,10 @@ class Anotacao extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Anotacao  $anotacao
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Anotacao $anotacao)
     {
         //
     }
@@ -64,10 +65,10 @@ class Anotacao extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Anotacao  $anotacao
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Anotacao $anotacao)
     {
         //
     }
@@ -75,10 +76,10 @@ class Anotacao extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Anotacao  $anotacao
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Anotacao $anotacao)
     {
         //
     }

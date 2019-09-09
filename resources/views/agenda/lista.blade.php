@@ -11,7 +11,8 @@
 <tr> <td><strong>Id</strong></td><td><strong>Nome</strong></td> <td><strong>Telefone</strong></td> </tr>
 @foreach($agenda as $s)
 <tr>
-<td><?php print "<a href='/show/".e($s->id)."'>".e($s->id)."</a>";?></td>
+<td><a href="/show/{{$s->id}}">{{$s->id}}</a></td>
  <td>{{$s->nome}}</td> <td>{{$s->telefone}}</td> </tr>
 @endforeach
+<tr> <td colspan="3"><a href="/criar">[INSERIR]</a></td></tr>
 </table></body></html>
