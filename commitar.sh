@@ -7,3 +7,4 @@ git commit -m $data
 #git pull
 git push --force origin master
 echo "*************** GIT COMMIT OK **********************"
+
