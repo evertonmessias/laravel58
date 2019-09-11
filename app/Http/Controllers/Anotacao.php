@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Anotacao;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class Anotacao extends Controller
 {

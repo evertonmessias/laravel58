@@ -9,11 +9,11 @@
 <body>
 <table class="tabela">
 <tr> <td><strong>Nome</strong></td> <td><strong>Telefone</strong></td></tr>
-<tr><td>{{$agenda->nome}}</td><td>{{$agenda->telefone}}</td></tr>
+<tr><td><?php echo e($agenda->nome); ?></td><td><?php echo e($agenda->telefone); ?></td></tr>
 <tr><td colspan="2">
 <a href="/lista">[VOLTAR]</a>&emsp;
-<a href="{{$agenda->id}}/edit">[EDITAR]</a>&emsp;
-<a href="{{$agenda->id}}/del">[APAGAR]</a>
+<a href="<?php echo e($agenda->id); ?>/edit">[EDITAR]</a>&emsp;
+<a href="<?php echo e($agenda->id); ?>/del">[APAGAR]</a>
 </td></tr>
 </table>
 </body></html>
