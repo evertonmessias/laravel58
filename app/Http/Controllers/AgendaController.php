@@ -10,9 +10,10 @@ use App\Models\Anotacao;
 class AgendaController extends Controller
 {
     public function lista(){
-        //$agenda = Agenda::all();
-        $agenda = DB::table('agendas')->get();
-        return view('agenda.lista',compact('agenda'));
+        $agenda = Agenda::all();
+        $anotacao = Anotacao::all();
+        //$agenda = DB::table('agendas')->get();
+        return view('agenda.lista',compact('agenda'),compact('anotacao'));
     }
     public function funcoes(){
         return view('agenda.funcoes');

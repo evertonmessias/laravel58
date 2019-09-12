@@ -1,6 +1,6 @@
 .tabela {
     font-size: 18px;
-    width: 400px;
+    width: 600px;
     border-spacing: 0px;
     display: block;
     position: relative;

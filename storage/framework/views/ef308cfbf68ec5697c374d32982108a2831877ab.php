@@ -8,7 +8,7 @@
 </head>
 <body>
 <table class="tabela">
-<tr> <td><strong>Nome</strong></td> <td><strong>Telefone</strong></td> </tr>
+<tr> <td><strong>Nome</strong></td> <td><strong>Telefone</strong></td></tr>
 <tr><td><?php echo e($agenda->nome); ?></td><td><?php echo e($agenda->telefone); ?></td></tr>
 <tr><td colspan="2">
 <a href="/lista">[VOLTAR]</a>&emsp;
