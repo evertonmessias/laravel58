@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anotacao extends Model
 {
-    public function agendas(){
-        return $this->hasOne(Agenda::class);
+    public function agenda(){
+        return $this->belongsTo(Agenda::class);
     }
 }

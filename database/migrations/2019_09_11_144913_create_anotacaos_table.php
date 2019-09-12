@@ -16,9 +16,7 @@ class CreateAnotacaosTable extends Migration
         Schema::create('anotacaos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email');
-            $table->string('endereco');
-            $table->integer('agendas_id')->unsigned();
-            $table->foreign('agendas_id')->references('id')->on('agendas');
+            $table->unsignedInteger('agenda_id');
             $table->timestamps();
         });
     }
