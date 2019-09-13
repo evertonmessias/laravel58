@@ -1,13 +1,9 @@
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div class="container">
-<!--            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
--->
-            <div id="nav">
+    <nav class="navbar">
+
+           <div id="nav">
                 <ul class="menu">
                     <li>
-                        <a href="/">Início</a>
+                        <a href="/home">Início</a>
                     </li>
                     <li>
                         <a href="/lista">Lista</a>
@@ -21,5 +17,4 @@
 
                 </ul>                
             </div>
-        </div>
     </nav>

@@ -2,8 +2,9 @@
 
 <?php $__env->startSection('content'); ?>
 
-<table class="tabela">
-<tr><td>
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<fieldset class="formulario criar">
 <form action="/update/<?php echo e($agenda->id); ?>" method="POST">
 <?php echo e(csrf_field()); ?>
 
@@ -12,11 +13,9 @@
 <p><strong>Editando: <?php echo e($agenda->id); ?></strong></p>
 <p>Nome:&emsp;<input type="text" name="nome" value="<?php echo e($agenda->nome); ?>"></p>
 <p>Telefone:<input type="text" name="telefone" value="<?php echo e($agenda->telefone); ?>"></p><br>
-<button type="submit">Enviar</button>&emsp;
-<button type="button" onclick="window.history.go(-1)">Voltar</button>
+<button type="submit">Enviar</button><br>
 </form>
-</td></tr>
-</table>
+</fieldset>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

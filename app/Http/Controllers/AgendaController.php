@@ -21,6 +21,9 @@ class AgendaController extends Controller
     public function estilo(){
         return view('agenda.estilo');
     }
+    public function contato(){
+        return view('agenda.contato');
+    }
     public function criar(){
         return view('agenda.criar');
     }

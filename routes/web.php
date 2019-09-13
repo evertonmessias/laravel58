@@ -11,14 +11,23 @@
 |
 */
 
-Route::get('/', function () {return view('layout');});
+Route::get('/', function () {return view('home');});
 Route::get('estilo', 'AgendaController@estilo');
 Route::get('funcoes', 'AgendaController@funcoes');
-Route::get('lista', 'AgendaController@lista')->name('LISTA');
-Route::get('criar', 'AgendaController@criar');
-Route::post('agenda','AgendaController@store');
-Route::get('show/{agenda}', 'AgendaController@show')->name('MOSTRAR');
-Route::get('show/{agenda}/edit', 'AgendaController@edit')->name('EDITAR');
-Route::get('show/{agenda}/del', 'AgendaController@del')->name('APAGAR');
-Route::put('update/{agenda}', 'AgendaController@update')->name('ATUALIZAR');
-Route::delete('destroy/{agenda}', 'AgendaController@destroy');
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('lista', 'AgendaController@lista');
+    Route::get('criar', 'AgendaController@criar');
+    Route::post('agenda','AgendaController@store');
+    Route::get('contato','AgendaController@contato');
+    Route::get('show/{agenda}', 'AgendaController@show');
+    Route::get('show/{agenda}/edit', 'AgendaController@edit');
+    Route::get('show/{agenda}/del', 'AgendaController@del');
+    Route::put('update/{agenda}', 'AgendaController@update');
+    Route::delete('destroy/{agenda}', 'AgendaController@destroy');
+    Route::get('/home', 'HomeController@index');
+});
+
+Auth::routes();
+
+

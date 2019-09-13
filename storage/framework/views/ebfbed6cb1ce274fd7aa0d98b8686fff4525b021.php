@@ -2,20 +2,19 @@
 
 <?php $__env->startSection('content'); ?>
 
-<table class="tabela">
-<tr><td>
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<fieldset class="formulario del">
 <form action="/destroy/<?php echo e($agenda->id); ?>" method="POST">
 <?php echo e(csrf_field()); ?>
 
 <?php echo e(method_field('DELETE')); ?>
 
 <p><strong>Deletando: <?php echo e($agenda->id); ?></strong></p>
-<p>Tem Certeza ?</p>
-<button type="submit">SIM</button>&emsp;
-<button type="button" onclick="window.history.go(-1)">NÃO</button>
+<p>Tem Certeza ?</p><br>
+<button type="submit">SIM</button><br>
 </form>
-</td></tr>
-</table>
+</fieldset>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

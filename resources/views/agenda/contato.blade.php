@@ -3,7 +3,8 @@
 @section('content')
 
 @include('layout')
+
 <fieldset class="formulario">
-<h1 class="sitenome">AGENDA</h1>
+<h1>&emsp;&emsp;CONTATOS&emsp;</h1>
 </fieldset>
 @endsection
