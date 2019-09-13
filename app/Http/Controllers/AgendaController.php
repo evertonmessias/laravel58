@@ -15,13 +15,7 @@ class AgendaController extends Controller
         //$agenda = DB::table('agendas')->get();
         return view('agenda.lista',compact('agenda'),compact('anotacao'));
     }
-    public function funcoes(){
-        return view('agenda.funcoes');
-    }
-    public function estilo(){
-        return view('agenda.estilo');
-    }
-    public function contato(){
+       public function contato(){
         return view('agenda.contato');
     }
     public function criar(){
@@ -36,9 +30,13 @@ class AgendaController extends Controller
         //$agenda->telefone = $request['telefone'];
         //$agenda->save();
         //return back();
+        if($request['nome'] && $request['telefone']){
         $nome = $request['nome'];$telefone = $request['telefone'];
         DB::table('agendas')->insert(['nome'=>$nome,'telefone'=>$telefone]);    
         return redirect('lista');
+        }else{
+            return view('agenda.criar'); 
+        }
     }
     public function edit(Agenda $agenda){
         return view('agenda.edit',compact('agenda'));
@@ -49,11 +47,15 @@ class AgendaController extends Controller
     }
 
     public function update(Request $request, Agenda $agenda){
+        if($request['nome'] && $request['telefone']){
         $nome = $request['nome'];$telefone = $request['telefone'];
         DB::table('agendas')
         ->where('id',$agenda->id)
         ->update(['nome'=>$nome,'telefone'=>$telefone]);
         return redirect('lista');
+        }else{
+            echo "<script>window.location.href='/';</script>"; 
+        }
     }
     
     public function destroy(Agenda $agenda){
