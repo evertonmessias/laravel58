@@ -7,10 +7,10 @@ php artisan serve &
 }
 
 echo "INICIANDO O LARAVEL"
-echo -n "Escolha (m)ysql ou (s)qlite : ";read op
+echo -n "Escolha [m]ysql ou [s]qlite : ";read op
 
 case $op in
 m) cp bkp.mysql.env .env;inicia_laravel;;
 s) cp bkp.sqlite.env .env;inicia_laravel;;
-*) echo "OPCAO INVALIDA";;
+*) echo "OPCAO INVALIDA !!!";;
 esac

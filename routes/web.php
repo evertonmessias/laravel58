@@ -12,8 +12,6 @@
 */
 
 Route::get('/', function () {return view('home');});
-Route::get('estilo', 'AgendaController@estilo');
-Route::get('funcoes', 'AgendaController@funcoes');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('lista', 'AgendaController@lista');

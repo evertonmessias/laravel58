@@ -12,7 +12,7 @@
 
 <p><strong>Deletando: <?php echo e($agenda->id); ?></strong></p>
 <p>Tem Certeza ?</p><br>
-<button type="submit">SIM</button>
+<button type="submit">&ensp;SIM&ensp;</button>
 <button type="button" onclick="window.history.go(-1);">Voltar</button><br>
 </form><br>
 </form>
