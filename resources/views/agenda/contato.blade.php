@@ -5,6 +5,16 @@
 @include('layout')
 
 <fieldset class="formulario">
-<h1>&emsp;&emsp;CONTATOS&emsp;</h1>
+
+
+<form action="/envio" enctype="multipart/form-data" method="POST">
+{{csrf_field()}}
+{{method_field('PUT')}}
+<p>Imagem:</p><br>
+<input type="file" name="imagem"><br>
+<button type="submit">Enviar</button>
+</form>
+
+
 </fieldset>
 @endsection

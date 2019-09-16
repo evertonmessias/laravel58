@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Agenda;
 use App\Models\Anotacao;
+use Illuminate\Support\Facades\Store;
 
 class AgendaController extends Controller
 {
@@ -63,6 +64,26 @@ class AgendaController extends Controller
         DB::table('agendas')->where('id',$agenda->id)->delete();
         // CUIDADO APAGA TUDO ===> DB::table('agendas')->truncate();
         return redirect('lista');
+    }
+    public function envio(Request $request){
+
+        request()->validate([
+            'imagem'=>'required|image'
+        ]);
+
+        if($request->hasFile('imagem')&& $request->file('imagem')->isValid()){
+
+            $upload = $request->imagem->storeAs('arquivos', $request['imagem'].'.jpg');
+
+            if(!$upload){
+                return redirect()->back()->with('error','Falha ao enviar');
+            }}
+            
+        else{
+            $data['imagem'] = null;
+        }
+        return redirect('lista');
+
     }
 }
 

@@ -24,6 +24,8 @@ Route::middleware(['auth'])->group(function(){
     Route::put('update/{agenda}', 'AgendaController@update');
     Route::delete('destroy/{agenda}', 'AgendaController@destroy');
     Route::get('/home', 'HomeController@index');
+    Route::put('/envio', 'AgendaController@envio');
+
 });
 
 Auth::routes();
