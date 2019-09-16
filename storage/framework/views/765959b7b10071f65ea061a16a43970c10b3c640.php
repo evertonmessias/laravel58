@@ -12,7 +12,7 @@
         <p>Nome:<input type="text" name="nome"></p>
         <p>Telefone:<input type="text" name="telefone"></p>
         <button type="submit">Enviar</button>
-        <br>
+        <button type="button" onclick="window.history.go(-1);">Voltar</button><br><br>
 </fieldset>
 
 <?php $__env->stopSection(); ?>

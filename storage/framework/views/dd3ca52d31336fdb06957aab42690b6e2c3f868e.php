@@ -13,8 +13,9 @@
 <p><strong>Editando: <?php echo e($agenda->id); ?></strong></p>
 <p>Nome:&emsp;<input type="text" name="nome" value="<?php echo e($agenda->nome); ?>"></p>
 <p>Telefone:<input type="text" name="telefone" value="<?php echo e($agenda->telefone); ?>"></p><br>
-<button type="submit">Enviar</button><br>
-</form>
+<button type="submit">Enviar</button>
+<button type="button" onclick="window.history.go(-1);">Voltar</button><br>
+</form><br>
 </fieldset>
 
 <?php $__env->stopSection(); ?>
