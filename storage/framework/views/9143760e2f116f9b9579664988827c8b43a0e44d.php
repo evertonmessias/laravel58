@@ -9,7 +9,7 @@
 <?php echo e(method_field('PUT')); ?>
 
 <p><strong>Inserir detalhes para : &emsp; <?php echo e($agenda->nome); ?></strong></p><br>
-<p>E-Mail:<input type="text" name="email" value=""></p>
+<p>E-Mail:<input type="text" name="email" value="<?php echo e($agenda->anotacao['email']); ?>"></p>
 <p>Imagem:</p><br>
 <input type="file" name="imagem"><br>
 <button type="submit">Enviar</button>
