@@ -43,6 +43,10 @@ class AgendaController extends Controller
         return view('agenda.edit',compact('agenda'));
     }
 
+    public function anotacao(Agenda $agenda){
+        return view('agenda.anotacao',compact('agenda'));
+    }
+
     public function del(Agenda $agenda){
         return view('agenda.del',compact('agenda'));
     }
@@ -65,25 +69,6 @@ class AgendaController extends Controller
         // CUIDADO APAGA TUDO ===> DB::table('agendas')->truncate();
         return redirect('lista');
     }
-    public function envio(Request $request){
 
-        request()->validate([
-            'imagem'=>'required|image'
-        ]);
-
-        if($request->hasFile('imagem')&& $request->file('imagem')->isValid()){
-
-            $upload = $request->imagem->storeAs('arquivos', $request['imagem'].'.jpg');
-
-            if(!$upload){
-                return redirect()->back()->with('error','Falha ao enviar');
-            }}
-            
-        else{
-            $data['imagem'] = null;
-        }
-        return redirect('lista');
-
-    }
 }
 
