@@ -17,6 +17,7 @@ class CreateAnotacaosTable extends Migration
             $table->increments('id');
             $table->string('email');
             $table->unsignedInteger('agenda_id');
+            $table->string('foto');
             $table->timestamps();
         });
     }

@@ -31,19 +31,33 @@ class AnotacaoController extends Controller
             }
         }
         if (isset($request['imagem'])) {
-
+            request()->validate([
+                'imagem' => 'mimes:jpg,jpeg,bmp,png'
+            ]);
+            $imagem = $request->file('imagem');
+            $extensao = $imagem->guessClientExtension();
+            $diretorio = 'img/';
+            $imagem->move($diretorio, $imagem.".".$extensao);
+            $foto = substr($imagem.".".$extensao, 5);
+            DB::table('anotacaos')
+                        ->where('agenda_id', $agenda->id)
+                        ->update(['foto' => $foto]);
+            
+            /*
             request()->validate([
                 'imagem' => 'required|image'
             ]);
 
             if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
 
-                $request->imagem->storeAs('arquivos', $request['imagem'] . '.jpg');
-                /*
-                if (!$upload) {                    
-                return redirect()->back()->with('error', 'Falha ao enviar');
-                }*/
-            }
+                $arq = $request->imagem->storeAs('arquivos', $request['imagem'] . '.jpg');
+                $rest = substr($arq, -13);
+                if ($arq) {
+                    DB::table('anotacaos')
+                        ->where('agenda_id', $agenda->id)
+                        ->update(['foto' => $rest]);
+                }
+            }*/
         }
         return redirect('lista');
     }

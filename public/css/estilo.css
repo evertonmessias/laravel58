@@ -29,11 +29,12 @@ display:none;transition: display 1s;}
 }
 
 .perfil{display: block;position: relative;margin: 0 auto;width: 200px;border-radius: 100px;}
+.mini{width: 50px;border-radius: 25px;}
 
 /*  ************  TABs  *************  */
 .tabela, .formulario {
     font-size: 18px;
-    width: 600px;
+    width: 800px;
     border-spacing: 0px;
     display: block;
     position: relative;

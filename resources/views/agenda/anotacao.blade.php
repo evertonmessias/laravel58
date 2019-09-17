@@ -9,7 +9,7 @@
 {{csrf_field()}}
 {{method_field('PUT')}}
 <p><strong>Inserir detalhes para : &emsp; {{$agenda->nome}}</strong></p><br>
-<p>E-Mail:<input type="text" name="email" value="{{$agenda->anotacao['email']}}"></p>
+<p>E-Mail:<input type="text" name="email" value="{{$agenda->anotacao['email']}}" required></p>
 <p>Imagem:</p><br>
 <input type="file" name="imagem"><br>
 <button type="submit">Enviar</button>

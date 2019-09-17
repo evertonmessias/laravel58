@@ -6,7 +6,7 @@
 
 <table class="tabela show">
 <tr><td><strong>Nome</strong></td><td><strong>Telefone</strong></td>
-<td><strong>E-Mail</strong></td> </tr>
+<td><strong>E-Mail</strong>&emsp;&emsp;(editar detalhes)</td> </tr>
 <tr><td>{{$agenda->nome}}</td><td>{{$agenda->telefone}}</td>
 <td>
  <?php
