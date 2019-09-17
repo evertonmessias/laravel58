@@ -13,7 +13,6 @@ class AnotacaoController extends Controller
 
     public function envio(Request $request, Agenda $agenda)
     {
-
         if ($request['email']) {
             $existe = false;
             $email = $request['email'];
@@ -30,25 +29,22 @@ class AnotacaoController extends Controller
             } else {
                 DB::table('anotacaos')->insert(['email' => $email, 'agenda_id' => $agenda->id]);
             }
-            return redirect('lista');
-
-            if ($request['imagem']) {
-
-                request()->validate([
-                    'imagem' => 'required|image'
-                ]);
-
-                if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
-
-                    $upload = $request->imagem->storeAs('arquivos', $request['imagem'] . '.jpg');
-
-                    if (!$upload) {
-                        return redirect()->back()->with('error', 'Falha ao enviar');
-                    }
-                }
-            }
-        } else {
-            echo "<script>alert('Nenhuma Alteração!');window.location.href='/';</script>";
         }
+        if (isset($request['imagem'])) {
+
+            request()->validate([
+                'imagem' => 'required|image'
+            ]);
+
+            if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
+
+                $request->imagem->storeAs('arquivos', $request['imagem'] . '.jpg');
+                /*
+                if (!$upload) {                    
+                return redirect()->back()->with('error', 'Falha ao enviar');
+                }*/
+            }
+        }
+        return redirect('lista');
     }
 }
