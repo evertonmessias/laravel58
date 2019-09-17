@@ -53,7 +53,7 @@ display:none;transition: display 1s;}
 
 .show td{width: 300px;}
 .del p{display: block;position: relative;margin: 0 auto;width: 120px;}
-.criar p{display: block;position: relative;left: 80px;}
+.criar p{display: block;position: relative;left: 180px;}
 .contato p{display: block;position: relative;left: 80px;}
 input,select{width: 300px; display: block;position: relative; left: 90px;top:-30px;}
-button{display: block;position: relative;float: left;margin-left: 35px;left:190px;}
+button{display: block;position: relative;float: left;margin-left: 60px;left:250px;}
