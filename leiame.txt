@@ -1,5 +1,11 @@
-﻿Depois de clonar, se der erro use :
+﻿Depois de clonar:
 
-composer update –no-scripts
+Criar pastas 
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
 
-composer dump-autoload
+Rodar:
+composer update
+
+
