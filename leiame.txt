@@ -7,5 +7,4 @@ storage/framework/views
 
 Rodar:
 composer update
-
-
+composer update --no-scripts
