@@ -1,6 +1,4 @@
 /vendor
-bkp.sqlite.env
-bkp.mysql.env
 .env
 /node_modules
 /public/hot
