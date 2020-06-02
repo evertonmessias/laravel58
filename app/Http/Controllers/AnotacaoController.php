@@ -33,16 +33,31 @@ class AnotacaoController extends Controller
         if (isset($request['imagem'])) {
             request()->validate([
                 'imagem' => 'mimes:jpg,jpeg,bmp,png'
-            ]);
-            $imagem = $request->file('imagem');
+            ]);            
+            $arquivo = $_FILES['imagem'];            
+            if ($arquivo['size'] != 0) {
+                $envio = move_uploaded_file($arquivo['tmp_name'], "img/" . $arquivo['name']);
+                if ($envio) {
+                    DB::table('anotacaos')
+                    ->where('agenda_id', $agenda->id)
+                    ->update(['foto' => $arquivo['name']])
+                ;                    
+                }
+            }
+
+
+
+
+
+            /*
             $extensao = $imagem->guessClientExtension();
             $diretorio = 'img/';
             $imagem->move($diretorio, $imagem.".".$extensao);
             $foto = substr($imagem.".".$extensao, 5);
-            DB::table('anotacaos')
-                        ->where('agenda_id', $agenda->id)
-                        ->update(['foto' => $foto]);
-            
+
+            */
+           
+
             /*
             request()->validate([
                 'imagem' => 'required|image'

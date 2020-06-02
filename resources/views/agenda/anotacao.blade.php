@@ -11,6 +11,7 @@
 <p><strong>Inserir detalhes para : &emsp; {{$agenda->nome}}</strong></p><br>
 <p>E-Mail:<input type="text" name="email" value="{{$agenda->anotacao['email']}}" required></p>
 <p>Imagem:</p><br>
+<input type="hidden" name="MAX_FILE_SIZE" value="1048576"> <!-- max 1MB -->
 <input type="file" name="imagem"><br>
 <button type="submit">Enviar</button>
 <button type="button" onclick="window.history.go(-1);">Voltar</button><br>
